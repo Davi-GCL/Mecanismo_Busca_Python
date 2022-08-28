@@ -46,7 +46,7 @@ def gerarResumos(textos:list,tamanho:int):
 
   return resumos
   
-textos_bruto = lerArquivos("textos\texto",".txt",4)
+textos_bruto = lerArquivos("textos/texto",".txt",4)
 textos_palavras = []
 
 resumos = gerarResumos(textos_bruto,27)

@@ -3,8 +3,8 @@ textos_palavras = []
 
 #Algoritmo para ler os textos presentes no arquivo, e armazena cada texto(arquivo) em uma posicao da lista
 for i in range (1,5):   
-    arqNome = "texto" + str(i) + ".txt" #Concatena com o numero indice para formar o caminho com nome de cada arquivo de texto
-    novoArqNome = "texto" + str(i) + ".html"
+    arqNome = "textos/texto" + str(i) + ".txt" #Concatena com o numero indice para formar o caminho com nome de cada arquivo de texto
+    novoArqNome = "textos/texto" + str(i) + ".html"
 
     with open(arqNome, "r", encoding="UTF-8") as arquivo:
         #Algoritmo para criar arquivos .html
