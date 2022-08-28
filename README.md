@@ -1,4 +1,4 @@
-# Mecanismo de Busca Com Python
+# 🔍 Mecanismo de Busca Com Python 🐍🧪
 Motor de busca para pesquisar palavras (em arquivos .txt ou HTML) e exibir links dos textos que as possuem de forma ranqueada. Utiliza paginas front-end, fazendo a comunicação através do Flask framework.
 
 #Requerimentos para executar em sua maquina:
