@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, session
 
 #Funcao para retirar toda as pontucoes de cada texto armazenado em 'textos'
 def limparTextos(textos,ponts):
@@ -64,15 +64,26 @@ app = Flask(__name__)
 #route => endereço da sua pagina(dominio da pagina): '/' para home page
 #funcao => o que sera exibido naquela pagina
 
+#necessario definir uma chave secreta para permitir a comunicao entre paginas
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
 @app.route("/", methods = ["GET","POST"]) #decorator: '@' serve para atribuir uma nova funcionalidade a funcao que esta logo abaixo (exibir conteudo da funcao na pagina do link informado)
 def indexpage():
-  entrada = request.form.get("pesquisa")
-  return render_template("index.html", imprimir = entrada)
+  entrada = None
+  entrada = request.form.get("pesquisa") 
+  session["pesquisa"] = request.form["pesquisa"]
+
+  #Quando o formulario for preenchido, redireciona para outra pagina(funcao)
+  if entrada != None:
+    return redirect(url_for('resultados1'))
+
+  return render_template("index.html", entrada = entrada)
   
 
 @app.route("/resultados1") #decorator: '@' com o link da pagina resultados
 def resultados1():
-  return render_template("resultados1.html")
+  
+  return render_template("resultados1.html", resultados = session["pesquisa"])
 
 #Coloca o site no ar
 if __name__ == "__main__": #Importante para evitar erros durante a hospedagem do site
