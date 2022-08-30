@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, redirect, url_for, session
 
-#Funcao para retirar toda as pontucoes de cada texto armazenado em 'textos'
+"""#Funcao para retirar toda as pontucoes de cada texto armazenado em 'textos'
 def limparTextos(textos,ponts):
   auxiliar = str()
   
@@ -14,7 +14,7 @@ def limparTextos(textos,ponts):
         textos[k] = auxiliar
         auxiliar = ""
 
-  return textos
+  return textos"""
 
 #Funcao para ler os textos presentes no arquivo, e armazena cada texto(arquivo) em uma posicao da lista
 def lerArquivos(caminho: str, formato: str, qntArq: int):
@@ -71,7 +71,11 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 def indexpage():
   entrada = None
   entrada = request.form.get("pesquisa") 
-  session["pesquisa"] = request.form["pesquisa"]
+  #session["pesquisa"] = request.form["pesquisa"]
+  with open("pesquisa.txt","w+",encoding="UTF-8") as escritor:
+    escritor.writelines(entrada)
+    escritor.seek(0)
+    
 
   #Quando o formulario for preenchido, redireciona para outra pagina(funcao)
   if entrada != None:
@@ -83,7 +87,11 @@ def indexpage():
 @app.route("/resultados1") #decorator: '@' com o link da pagina resultados
 def resultados1():
   
-  return render_template("resultados1.html", resultados = session["pesquisa"])
+  with open("pesquisa.txt","r",encoding="UTF-8") as leitura:
+    dados = leitura.readline()
+    leitura.seek(0)
+
+  return render_template("resultados1.html", resultados = dados)
 
 #Coloca o site no ar
 if __name__ == "__main__": #Importante para evitar erros durante a hospedagem do site

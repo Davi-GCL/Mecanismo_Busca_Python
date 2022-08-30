@@ -12,5 +12,6 @@ for i in range (1,5):
         #Recebe como parametro o caminho e nome do arquivo(se nao for encontrado, sera criado um).
         #'w+' = Permite leitura, atualizacao e criacao do arquivo
 
-        aux.writelines(arquivo) #Escreve o texto do documento lido(atribuido a 'arquivo') na nova pagina criada    
+        aux.writelines(arquivo) #Escreve o texto do documento lido(atribuido a 'arquivo') na nova pagina criada  
+  
 
