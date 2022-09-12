@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indexpage</title>
+    <meta name="keywords" content="fbtech, Primesite, HTML, CSS, Javascript">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'styles.css') }}">
+    <title>FBIT - Pesquisa</title>
+
+
 </head>
 <body>
-    <p>Essa e a pagina inicial {{ entrada }}</p>
-    <form action = "{{ url_for('indexpage') }}" method = "post">
-        <label for = "">FBit Search Engine</label><br>
-        
-        <input type = "text" name = "pesquisa" placeholder="Pesquise no FBit">
-        
-        <button type = "submit">Pesquisar</button>
-    </form>
+    <main>
 
-    
+        <div class="logotipo">
+                
+                <img src="{{ url_for('static',filename = 'FBITlogo.png') }}" alt="Logo" align=”middle”>
+                 
+        </div>
+        
+        <div class="barrapesquisa">
+         
+                <form action = "{{ url_for('indexpage') }}" method = "post" id="barradepesquisa">
+                    <input name = "pesquisa" type="text" class = "txtBusca" id="search" placeholder="Buscar..."/>
+                    <input class = "btnBusca" type="image" src="{{ url_for('static',filename = 'image.png') }}" alt="Search">
+                </form>
+                    
+        </div>
+        
+
+    </main>
+
+<footer>
+    <a href="creditos.html" id="botaocreditos">Creditos</a>
+    <a href="FB_Tech.html" target="_self" title="FB_Tech" id="botaofbtech">FB_Tech</a>
+    <a>FBtech 2022. Todos os direitos reservados.</a>
+</footer>
+
 </body>
-</html>
+</html> 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="keywords" content="fbtech, Primesite, HTML, CSS, Javascript">
+                <link rel="stylesheet" href="{{ url_for('static',filename = 'styles.css') }}">
+                <title>FBIT - Texto</title>
+            </head>
+            <body>
+
+
+            <nav>
+                <a href="{{ url_for('indexpage') }}">Home</a>
+                <a href="/resultados/1" target="_self" title="FB_Tech" >Resultados</a>
+                <a href="">Base de Dados</a>
+                <a href="">Creditos</a>
+                
+            </nav>
+
+            <div class="container-flex">
+                <div class="leftbar">
+                    <h1>Texto {{numTexto}}</h1>
+                    
+
+                </div>
+                <div>
+                    <div class="card">
+                        <h2>Texto {{numTexto}}</h2>
+                    <p>{{texto}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+            <footer>
+                <a id="footercreditos">FBtech 2022. Todos os direitos reservados.</a>
+            </footer>
+            </div>
+
+            </body>
+            </html> 

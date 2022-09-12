@@ -1,0 +1,206 @@
+/* Abaixo criaremos as regras de estilo para os elementos da comunicação visual dos projetos web que desenvolveremos. Os
+Elementos são: COR, TIPOGRAFIA, IMAGEM e ESTRUTURA\*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*SELETOR UNIVERSAL*/
+* {
+  font-family:"roboto";
+  margin: 0px;
+}
+
+/* Inserir seletores especificos de estilização de texto
+(Elementos, IDs, Classes, pseudo-elementos e pseudo-classe)*/
+
+
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: rgb(0, 0, 0);
+    padding: 40px 40px 0px 40px;
+    margin: 20px;
+    text-align: center;
+}
+
+h4{
+  font-size: 1.5em;
+  color: white;
+  padding: 10px 20px;
+  margin: 0px;
+}
+
+
+
+
+nav{
+  overflow: hidden;
+  background-color: #04c748;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(248, 248, 248);
+  margin: 0px;
+  width: 100%;
+
+}
+nav a {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none ;
+  padding: 10px 20px;
+}
+
+
+/*Link não visitado*/
+a {
+    color:black;
+    text-decoration: none;
+}
+
+
+/*Link*/
+nav a:hover{
+  color:green;
+  border-bottom:1px solid #fff ;
+  
+  
+}
+
+.logotipo img{
+  border:none;
+  height: 200px;;
+  width:600px;
+  margin: 90px;
+  margin-bottom: 50px;
+  font-weight: lighter;
+  text-align: center;
+  display: block;
+}
+
+
+.logotipo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.barrapesquisa{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.leftbar{
+  background-color: #ffffff;
+}
+
+.leftbar h2{
+  color: rgb(0, 0, 0);
+  font-size: 1.25em;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+.leftbar p{
+  color: #000;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.card{
+  
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0);
+  padding: 20px;
+  text-align: center;
+  display: block;
+  margin: 50px;
+}
+
+#footercreditos{
+  margin-left: 76%;
+}
+
+#botaocreditos{
+  justify-content: space-between;
+  margin-right: 2%;
+}
+
+#botaofbtech{
+  margin-right: 64%;
+}
+
+#barradepesquisa{
+  width:auto;
+  display: block;
+  border: 2px solid black;
+  border-radius: 7px;
+}
+
+#barradepesquisa:hover {
+  box-shadow: 4px 4px 10px rgb(126, 126, 126);
+}
+
+#search:focus-visible {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+
+#divBusca{
+  background-color:#64db9a;
+  border:solid 1px;
+  border-radius:15px;
+  width:350px;
+}
+
+.txtBusca {
+  float:left;
+  
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:36px;
+  width: 600px;
+}
+
+.btnBusca{
+  border:none;
+  float:left;
+  height: 38px;
+  width: 40px;
+  font-weight:bold;
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+}
+
+#divBusca img{
+  float: center;
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+}
+
+footer{
+  color: white;
+  background-image: linear-gradient(to right, #008020,#00ff59);
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  flex-shrink: 0;
+  bottom: 0;
+  position: absolute;
+}

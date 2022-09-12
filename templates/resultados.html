@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'styles.css') }}">
+    <title>FBIT - Resultado</title>
+</head>
+<body>
+
+<!--Inserir aqui a barra de navegação-->
+<nav>
+    <div class="barrapesquisa" style="margin-left: 50px;">
+         
+        <form action = "{{ url_for('indexpage') }}" method = "post" id="barradepesquisa">
+            <input name = "pesquisa" type="text" class = "txtBusca" id="search" placeholder="Buscar..."/>
+            <input class = "btnBusca" type="image" src="{{ url_for('static',filename = 'image.png') }}" alt="Search">
+        </form>
+            
+    </div>
+    <div class="navlinks" style="margin-right: 25px;">
+
+        <a href="/">HOME</a>
+        <a href="/FBit" target="_self" title="Sobre Nos" >Sobre Nos</a>
+        <a href="">Base de Dados</a>
+        <a href="/creditos">Creditos</a>
+    </div>
+       
+</nav>
+
+
+<div class="container-flex" styles = "min-height: 100vh;">
+    <div class="leftbar">
+        <h1>Resultados da pesquisa</h1>
+        <h2>Aproximadamente {{qntTextos}} resultados</h2>
+    </div>
+    <div>
+        
+            {% for i in indicesTextos %}
+                <div class = "card">
+
+                    <br>
+                    <h2><a href="/textos/texto{{i}}">Texto{{i}}</a></h2>
+                    {{ resumos[i] }}
+                    <br>
+                    
+                </div>    
+            {% endfor %}
+        
+        
+    
+        <p>Estamos na pagina {{ pagina_num }} de resultados</p>
+    </div>
+    <footer style="position:relative">
+        <p>FBtech 2022. Todos os direitos reservados.</p>
+    </footer>
+</div>
+
+
+</body>
+</html> 

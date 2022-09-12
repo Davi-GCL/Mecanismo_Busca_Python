@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 #Funcao para ler os textos presentes no arquivo, e armazena cada texto(arquivo) em uma posicao da lista
-def lerArquivos(caminho: str, formato: str, qntArq: int):
+def lerArquivos(caminho: str, formato: str,init: int, fin: int):
   textos = []
-  for i in range (1,qntArq+1):   
+  for i in range (init,fin+1):   
       arqNome = str(caminho) + str(i) + str(formato) #Concatena com o numero indice para formar o caminho com nome de cada arquivo de texto: "texto1.txt"
 
       with open(arqNome, "r", encoding="UTF-8") as arquivo: #A funcao open retorna um objeto do tipo manipulador de arquivo, atribuindo ao 'arquivo'
@@ -38,8 +38,13 @@ def gerarResumos(textos:list,tamanho:int):
   for i in range (0, len(textos)):
     palavras = textos[i].split()
     for j in range(0,tamanho):
-      aux += " " + palavras[j]
-    
+      try:
+        aux += " " + palavras[j]
+
+      except:
+        continue
+
+
     resumos.append(aux + "...")
     aux = ""
 
@@ -233,8 +238,9 @@ def cleanText(frase):
     return fraseNova.lower()       
 
 # -------------------------------- Função de Pesquisa e Resultado -------------------------------------------------
-def pesquisa(rankTexto):
+def pesquisa(dadosEntrada, rankTexto):
     global listaTexto
+    rankPalavraTxt = list()
     def somatorio(rankPalavraTxt, vetorRank):
         for palavra in rankPalavraTxt:
             vetorSoma = list()
@@ -271,7 +277,7 @@ def pesquisa(rankTexto):
    
        
     vetorRank = list()#armazena a a quantidade de cada palavra em cada texto e os indices de cada texto
-    varPesquisa = str(input("Deseja pesquisar que tema? "))
+    varPesquisa = dadosEntrada
     varPalavra = cleanText(varPesquisa)
     if " " in varPalavra: #verifica se a palavra e composta e explita, gerando uma lista
         varPalavra = varPalavra.split()
@@ -329,7 +335,5 @@ def pesquisa(rankTexto):
 
             
 
-    print("\n\n\nResultado da Busca de:", varPesquisa)
-    for i in range(0, len(vetorIndice)):
-        #print(listaTexto[i][:40])       
-        print("Texto {}: {}...\n" .format(vetorIndice[i],listaTexto[i][:300]))
+       
+    return vetorIndice
