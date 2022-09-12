@@ -4,4 +4,4 @@ Motor de busca para pesquisar palavras (em arquivos .txt ou HTML) e exibir links
 ### Requerimentos para executar em sua maquina:
 - Esta é uma aplicação web que roda localmente no computador, pois ,atualmente, não está hospedado na internet.
 - Para que funcione normalmente, é preciso ter o interpretador de Python e o Flask intalados.
-- Não inicie através dos arquivos html! Inicie a aplição através do arquivo.py e copie o ip informado e cole no browser.
+- Não inicie através dos arquivos html! Inicie a aplição através do arquivo 'main_app.py', copie o ip informado pelo terminal e cole no browser.
